@@ -1,58 +1,27 @@
-Project Title: Audio Classification with LSTM and MFCC Features
+### GitHub README
 
-Table of Contents
-About
-Data
-Installation
-Usage
-Model
-Results
-Contributing
-License
-About
-This project aims to classify audio files using LSTM (Long Short-Term Memory) networks with MFCC (Mel-Frequency Cepstral Coefficients) features. The goal is to leverage LSTM's ability to handle sequential data for effective audio classification.
+**Project Title: Audio Classification with LSTM and MFCC Features**
 
-Data
-The dataset consists of 7442 audio files from the CREMA-D dataset. Each audio file is preprocessed to extract MFCC features, which are then used as input to the LSTM model. The dataset is split into training, validation, and test sets to evaluate the model's performance.
+#### About
+This project focuses on classifying audio files using LSTM (Long Short-Term Memory) networks in conjunction with MFCC (Mel-Frequency Cepstral Coefficients) features. Audio classification is a critical task in various applications, including speech recognition, music genre classification, and emotion detection. Leveraging LSTM networks allows for handling the sequential nature of audio data effectively.
 
-Installation
-Clone the repository:
-bash
-Copy code
-git clone https://github.com/yourusername/audio-classification-lstm.git
-Navigate to the project directory:
-bash
-Copy code
-cd audio-classification-lstm
-Install the required dependencies:
-Copy code
-pip install -r requirements.txt
-Usage
-Preprocess the data:
-python
-Copy code
-python preprocess.py
-Train the model:
-python
-Copy code
-python train.py
-Evaluate the model:
-python
-Copy code
-python evaluate.py
-Model
-The model architecture consists of:
+#### Data
+The dataset used in this project is the CREMA-D (Crowd-sourced Emotional Multimodal Actors Dataset), which comprises 7442 audio files. Each file contains a spoken utterance with different emotional expressions. This dataset provides a rich source of varied audio signals, making it suitable for training and testing audio classification models.
 
-Two LSTM layers with 128 and 64 units respectively.
-Batch normalization layers for stable training.
-A Dense layer with 64 units and ReLU activation.
-A Dropout layer with a rate of 0.3 to prevent overfitting.
-An output Dense layer with 6 units and softmax activation for classification.
-Results
-The model achieved an accuracy of approximately 18% on the test set after training for 50 epochs. Further tuning and improvements are ongoing to enhance performance.
+#### Features
+To extract meaningful features from the audio files, MFCCs are used. MFCCs capture the short-term power spectrum of a sound and are widely used in speech and audio processing. In this project, the MFCC features are extracted from each audio file, providing a robust representation for the LSTM model.
 
-Contributing
-Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure that your code adheres to the project's coding standards and includes appropriate tests.
+#### Model
+The model architecture consists of the following key components:
+- **LSTM Layers**: Two LSTM layers with 128 and 64 units respectively, designed to capture the temporal dependencies in the audio data.
+- **Dense Layers**: A Dense layer with 64 units and ReLU activation to learn complex representations.
+- **Dropout Layer**: A Dropout layer with a rate of 0.3 to prevent overfitting during training.
+- **Output Layer**: A Dense layer with 6 units and softmax activation for classification into six categories.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+#### Training and Evaluation
+The model is trained using the processed MFCC features. The dataset is split into training, validation, and test sets to evaluate the model's performance. During training, techniques such as batch normalization and learning rate scheduling are employed to improve the model's convergence and stability. Early stopping and reducing the learning rate on plateau help in preventing overfitting and ensuring efficient training.
+
+#### Results
+After training for 50 epochs, the model achieved an initial accuracy of approximately 18% on the test set. While this indicates room for improvement, it provides a solid foundation for further tuning and optimization of the model. Future work includes experimenting with different model architectures, hyperparameters, and feature extraction techniques to enhance classification accuracy.
+
+This project demonstrates the potential of combining LSTM networks with MFCC features for effective audio classification. The approach can be extended to various audio classification tasks, paving the way for more sophisticated and accurate models in the field of audio processing.
